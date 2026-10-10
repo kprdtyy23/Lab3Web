@@ -26,7 +26,7 @@ Berikan penjelasan dan contohnya!
 4. Pada sebuah elemen HTML terdapat ID dan Class, apabila masing-masing selector
 tersebut terdapat deklarasi CSS, maka deklarasi manakah yang akan ditampilkan pada
 
-browser? Berikan penjelasan dan contohnya! ( <p id="paragraf-1" class="text-
+browser? Berikan penjelasan dan contohnya! ( p id="paragraf-1" class="text-
 paragraf"> )
 
 Jawaban!
@@ -58,14 +58,14 @@ Selector h1 digunakan untuk memberikan gaya pada semua elemen HTML <h1> yang ada
 
 Sementara itu, selector #intro h1 digunakan untuk memberikan gaya hanya pada elemen <h1> yang berada di dalam elemen yang memiliki ID intro.
 
-# Contoh HTML: 
+#Contoh HTML: 
 h1 Judul Pertama /h1
 
 div id="intro"
     h1 Judul Kedua /h1
 /div
 
-# Contoh CSS: 
+#Contoh CSS: 
 h1 {
     color: blue;
 }
@@ -78,19 +78,19 @@ h1 {
 *Judul Kedua akan berwarna merah karena berada di dalam elemen dengan ID intro. Selector #intro h1 memiliki tingkat spesifisitas lebih tinggi daripada selector h1, sehingga deklarasi tersebut berlaku pada Judul Kedua.
 
 3. Prioritas CSS internal, eksternal, dan inline
-CSS internal ditulis menggunakan tag <style> di dalam file HTML. CSS eksternal ditulis dalam file terpisah dengan ekstensi .css, sedangkan inline CSS ditulis langsung pada atribut style di elemen HTML.
+CSS internal ditulis menggunakan tag style> di dalam file HTML. CSS eksternal ditulis dalam file terpisah dengan ekstensi .css, sedangkan inline CSS ditulis langsung pada atribut style di elemen HTML.
 
-# Contoh CSS internal:
+#Contoh CSS internal:
 style>
     p {
         color: blue;
     }
 /style>
-# Contoh CSS eksternal (style.css):
+#Contoh CSS eksternal (style.css):
 p {
     color: green;
 }
-# Contoh HTML dengan inline CSS:
+#Contoh HTML dengan inline CSS:
 p style="color: red;">Belajar CSS /p>
 
 Hasil yang ditampilkan: Teks Belajar CSS akan berwarna merah karena inline CSS memiliki prioritas lebih tinggi daripada deklarasi internal dan eksternal biasa, selama tidak ada aturan prioritas khusus yang mengubah hasilnya, seperti !important.
@@ -100,11 +100,11 @@ Namun, jika ketiga deklarasi memiliki tingkat kepentingan yang sama dan selector
 4. Prioritas selector ID dan Class
 Apabila sebuah elemen HTML memiliki ID dan Class sekaligus, selector ID memiliki tingkat spesifisitas lebih tinggi daripada selector Class.
 
-# Contoh HTML:
+#Contoh HTML:
 p id="paragraf-1" class="text-paragraf">
     Ini adalah contoh paragraf.
 /p>
-# Contoh CSS:
+#Contoh CSS:
 #paragraf-1 {
     color: red;
 }
@@ -112,7 +112,6 @@ p id="paragraf-1" class="text-paragraf">
 .text-paragraf {
     color: blue;
 }
-gi
 Hasil yang ditampilkan: Teks paragraf akan berwarna merah karena selector ID (#paragraf-1) memiliki tingkat spesifisitas lebih tinggi daripada selector Class (.text-paragraf).
 Urutan spesifisitas dasar CSS dari yang lebih tinggi ke lebih rendah adalah:
 1. Inline CSS.
