@@ -15,57 +15,40 @@ KELAS   : I253A
 # 5. Menambahkan CSS Selektor
 ![Gambar 5](screenshot/ss%20menambahkan%20css%20selektor.png)
 
-Pertanyaan dan Tugas!
-1. Lakukan eksperimen dengan mengubah dan menambah properti dan nilai pada kode CSS
-dengan mengacu pada CSS Cheat Sheet yang diberikan pada file terpisah dari modul ini.
-2. Apa perbedaan pendeklarasian CSS elemen h1 {...} dengan #intro h1 {...}? berikan
-penjelasannya!
-3. Apabila ada deklarasi CSS secara internal, lalu ditambahkan CSS eksternal dan inline
-CSS pada elemen yang sama. Deklarasi manakah yang akan ditampilkan pada browser?
-Berikan penjelasan dan contohnya!
-4. Pada sebuah elemen HTML terdapat ID dan Class, apabila masing-masing selector
-tersebut terdapat deklarasi CSS, maka deklarasi manakah yang akan ditampilkan pada
+# LAPORAN PRAKTIKUM CSS
 
-browser? Berikan penjelasan dan contohnya! ( p id="paragraf-1" class="text-
-paragraf"> )
+## 1. Eksperimen Properti dan Nilai CSS
 
-Jawaban!
+Saya melakukan eksperimen dengan mengubah dan menambahkan beberapa properti CSS, seperti `color`, `background-color`, `font-size`, `text-align`, `padding`, dan `border`.
 
-1. Eksperimen mengubah dan menambah properti CSS
-Eksperimen dilakukan dengan mengubah nilai properti CSS untuk melihat perubahan tampilan pada halaman web, seperti warna, ukuran teks, jarak, dan warna latar belakang.
+Contoh kode CSS:
 
-body {
-    background-color: lightgray;
-    font-family: Arial, sans-serif;
-}
-
+```css
 h1 {
-    color: green;
-    font-size: 32px;
+    color: blue;
     text-align: center;
 }
 
 p {
     color: black;
+    background-color: lightgray;
     font-size: 18px;
-    line-height: 1.5;
-    background-color: white;
     padding: 10px;
+    border: 1px solid black;
 }
+```
 
-2. Perbedaan selector h1 { ... } dengan #intro h1 { ... }
-Selector h1 digunakan untuk memberikan gaya pada semua elemen HTML <h1> yang ada di halaman web.
+**Hasil eksperimen:**
 
-Sementara itu, selector #intro h1 digunakan untuk memberikan gaya hanya pada elemen <h1> yang berada di dalam elemen yang memiliki ID intro.
+Judul menjadi berwarna biru dan berada di tengah. Paragraf memiliki tulisan berwarna hitam, latar belakang abu-abu, ukuran huruf 18 piksel, jarak di dalam elemen, serta garis tepi berwarna hitam.
 
-#Contoh HTML: 
-h1 Judul Pertama /h1
+## 2. Perbedaan Selector `h1` dan `#intro h1`
 
-div id="intro"
-    h1 Judul Kedua /h1
-/div
+Selector `h1` digunakan untuk mengatur semua elemen HTML `<h1>`. Sementara itu, selector `#intro h1` digunakan untuk mengatur elemen `<h1>` yang berada di dalam elemen dengan ID `intro`.
 
-#Contoh CSS: 
+Contoh CSS:
+
+```css
 h1 {
     color: blue;
 }
@@ -73,38 +56,61 @@ h1 {
 #intro h1 {
     color: red;
 }
+```
 
-*Judul Pertama akan berwarna biru.
-*Judul Kedua akan berwarna merah karena berada di dalam elemen dengan ID intro. Selector #intro h1 memiliki tingkat spesifisitas lebih tinggi daripada selector h1, sehingga deklarasi tersebut berlaku pada Judul Kedua.
+Contoh HTML:
 
-3. Prioritas CSS internal, eksternal, dan inline
-CSS internal ditulis menggunakan tag style> di dalam file HTML. CSS eksternal ditulis dalam file terpisah dengan ekstensi .css, sedangkan inline CSS ditulis langsung pada atribut style di elemen HTML.
+```html
+<h1>Judul Pertama</h1>
 
-#Contoh CSS internal:
-style>
-    p {
-        color: blue;
-    }
-/style>
-#Contoh CSS eksternal (style.css):
+<div id="intro">
+    <h1>Judul Kedua</h1>
+</div>
+```
+
+**Penjelasan:**
+
+Judul pertama berwarna biru, sedangkan judul kedua berwarna merah karena berada di dalam elemen dengan ID `intro`. Selector `#intro h1` memiliki spesifisitas lebih tinggi daripada selector `h1`.
+
+## 3. Prioritas CSS Internal, Eksternal, dan Inline
+
+CSS internal ditulis menggunakan tag `<style>` di dalam HTML, CSS eksternal ditulis dalam file terpisah, sedangkan inline CSS ditulis langsung pada atribut `style` suatu elemen HTML.
+
+Contoh CSS eksternal (`style.css`):
+
+```css
 p {
-    color: green;
+    color: blue;
 }
-#Contoh HTML dengan inline CSS:
-p style="color: red;">Belajar CSS /p>
+```
 
-Hasil yang ditampilkan: Teks Belajar CSS akan berwarna merah karena inline CSS memiliki prioritas lebih tinggi daripada deklarasi internal dan eksternal biasa, selama tidak ada aturan prioritas khusus yang mengubah hasilnya, seperti !important.
+Contoh CSS internal:
 
-Namun, jika ketiga deklarasi memiliki tingkat kepentingan yang sama dan selector yang sama, CSS internal atau eksternal yang ditulis paling akhir akan menang di antara keduanya. Posisi penulisan dan spesifisitas juga perlu diperhatikan.
+```html
+<style>
+    p {
+        color: red;
+    }
+</style>
+```
 
-4. Prioritas selector ID dan Class
-Apabila sebuah elemen HTML memiliki ID dan Class sekaligus, selector ID memiliki tingkat spesifisitas lebih tinggi daripada selector Class.
+Contoh inline CSS:
 
-#Contoh HTML:
-p id="paragraf-1" class="text-paragraf">
-    Ini adalah contoh paragraf.
-/p>
-#Contoh CSS:
+```html
+<p style="color: green;">Belajar CSS</p>
+```
+
+**Penjelasan:**
+
+Tulisan paragraf akan berwarna hijau karena inline CSS memiliki prioritas lebih tinggi daripada deklarasi internal dan eksternal biasa. Namun, prioritas juga dapat dipengaruhi oleh `!important`, spesifisitas selector, dan urutan deklarasi CSS.
+
+## 4. Prioritas Selector ID dan Class
+
+Selector ID menggunakan tanda pagar (`#`), sedangkan selector Class menggunakan tanda titik (`.`). Selector ID memiliki spesifisitas lebih tinggi daripada selector Class.
+
+Contoh CSS:
+
+```css
 #paragraf-1 {
     color: red;
 }
@@ -112,10 +118,16 @@ p id="paragraf-1" class="text-paragraf">
 .text-paragraf {
     color: blue;
 }
-Hasil yang ditampilkan: Teks paragraf akan berwarna merah karena selector ID (#paragraf-1) memiliki tingkat spesifisitas lebih tinggi daripada selector Class (.text-paragraf).
-Urutan spesifisitas dasar CSS dari yang lebih tinggi ke lebih rendah adalah:
-1. Inline CSS.
-2. Selector ID, misalnya #paragraf-1.
-3. Selector Class, misalnya .text-paragraf.
-4. Selector elemen, misalnya p.
-Urutan tersebut berlaku untuk deklarasi normal dengan kondisi yang setara. Aturan !important, asal stylesheet, dan beberapa aturan khusus lainnya dapat memengaruhi hasil akhir.
+```
+
+Contoh HTML:
+
+```html
+<p id="paragraf-1" class="text-paragraf">
+    Ini adalah contoh paragraf.
+</p>
+```
+
+**Penjelasan:**
+
+Tulisan paragraf akan berwarna merah karena selector `#paragraf-1` memiliki spesifisitas lebih tinggi daripada selector `.text-paragraf`. Dengan demikian, ketika kedua selector mengatur properti yang sama dan tidak ada aturan dengan prioritas lebih tinggi, deklarasi ID yang diterapkan oleh browser.
