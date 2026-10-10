@@ -4,15 +4,15 @@ NAMA    : Eka Sari Praditya
 NIM     : 31210021
 KELAS   : I253A
 
-# 1 Membuat Dokumen HTML
+# 1. Membuat Dokumen HTML
 ![Gambar 1](screenshot/ss%20membuat%20dokumen%20html.png)
-# 2 Mendeklarasikan CSS Internal
+# 2. Mendeklarasikan CSS Internal
 ![Gambar 2](screenshot/ss%20mendeklarasikan%20css%20internal.png)
-# 3 menambahkan Inline CSS
+# 3. menambahkan Inline CSS
 ![Gambar 3](screenshot/ss%20menambahkan%20inline%20css.png)
-# 4 Membuat CSS Eksternal
+# 4. Membuat CSS Eksternal
 ![Gambar 4](screenshot/ss%20membuat%20css%20eksternal.png)
-# 5 Menambahkan CSS Selektor
+# 5. Menambahkan CSS Selektor
 ![Gambar 5](screenshot/ss%20menambahkan%20css%20selektor.png)
 
 Pertanyaan dan Tugas!
